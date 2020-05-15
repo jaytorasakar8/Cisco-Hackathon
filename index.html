@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Page Title -->
+    <title>Cisco Webex Meetings</title>
+
+    <!-- CSS Files -->
+    <link rel="icon" type="image/png" href="assets/images/cisco.png">
+    <link rel="stylesheet" href="assets/css/animate-3.7.0.css">
+    <link rel="stylesheet" href="assets/css/font-awesome-4.7.0.min.css">
+    <link rel="stylesheet" href="assets/fonts/flat-icon/flaticon.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-4.1.3.min.css">
+    <link rel="stylesheet" href="assets/css/owl-carousel.min.css">
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script type="text/javascript">
+        /*
+        var mealsByCategory = {
+    A: ["Soup", "Juice", "Tea", "Others"],
+    B: ["Soup", "Juice", "Water", "Others"],
+    C: ["Soup", "Juice", "Coffee", "Tea", "Others"]
+}
+
+    function changecat(value) {
+        if (value.length == 0) document.getElementById("category").innerHTML = "<option></option>";
+        else {
+            var catOptions = "";
+            for (categoryId in mealsByCategory[value]) {
+                catOptions += "<option>" + mealsByCategory[value][categoryId] + "</option>";
+            }
+            console.log(catOptions)
+
+               document.getElementById("abc").innerHTML = catOptions;
+
+            console.log( document.getElementById('abc'))
+            //document.getElementById("category").innerHTML = catOptions;
+        }
+    }
+    */
+/*
+
+function getStateOptions(value) {
+    var statesbycategory ={
+            us: ["Soup", "Juice", "Tea", "Others"],
+    au: ["Soup", "Juice", "Water", "Others"],
+    in: ["Soup", "Juice", "Coffee", "Tea", "Others"]
+
+          us: ["California", "New York", "Washington","Texas"],
+
+     au: ["Brisbane","Adelaide","Melbourne"],
+     in: ["Mumbai","Bangalore","Pune", "Chennai","Delhi"]
+
+    }
+
+        if (value.length == 0)
+            document.getElementById("select_state").innerHTML = "<option></option>";
+        else {
+            var newSelect = document.createElement('option');
+            var catOptions = "";
+            console.log(statesbycategory)
+            for (categoryId in statesbycategory) {
+                console.log("Id: " +categoryId)
+                catOptions += "<option>" + statesbycategory[categoryId] + "</option>";
+            }
+            console.log(catOptions)
+             newSelect.innerHTML = catOptions;
+            document.getElementById('select_state').add(newSelect)
+            //document.getElementById("select_state").innerHTML = catOptions;
+        }
+    }
+    /*
+    </script>
+    <style type="text/css">
+        /* [1] The container */
+        .img-hover-zoom {
+            /*height: 300px; */ /* [1.1] Set it as per your need */
+            overflow: hidden; /* [1.2] Hide the overflowing of child elements */
+        }
+
+        /* [2] Transition property for smooth transformation of images */
+        .img-hover-zoom img {
+            transition: transform .5s ease;
+        }
+
+        /* [3] Finally, transforming the image when container gets hovered */
+        .img-hover-zoom:hover img {
+            transform: scale(1.4);
+
+        }
+    </style>
+    <style type="text/css">
+        div.dropdown {
+            color: #555;
+            margin: 3px -22px 0 0;
+            width: 143px;
+            position: relative;
+            height: 17px;
+            text-align:left;
+        }
+        div.submenu
+        {
+            position: absolute;
+            z-index: 100;
+            width: 135px;
+            display: none;
+            margin-left: 10px;
+            padding: 40px 0 5px;
+            border-radius: 6px;
+        }
+        .dropdown  li a {
+            color: #555555;
+            display: block;
+            font-family: arial;
+            font-weight: bold;
+            padding: 6px 15px;
+            cursor: pointer;
+            text-decoration:none;
+        }
+        .dropdown li a:hover{
+            background:#155FB0;
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+        a.account {
+            font-size: 11px;
+            line-height: 16px;
+            color: #555;
+            position: absolute;
+            z-index: 110;
+            display: block;
+            padding: 11px 0 0 20px;
+            height: 28px;
+            width: 121px;
+            margin: -11px 0 0 -10px;
+            text-decoration: none;
+            background: url(images/arrow.png) 80px 32px no-repeat;
+            cursor:pointer;
+        }
+        .root
+        {
+            list-style: none;
+            font-size: 11px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+            background: #fff;
+            padding: 10px 0 10px 0;
+            border-radius: 5px 5px 5px 5px;
+            margin: 21px 0 0 0;
+        }
+        .root:before {
+            content: '';
+            display: inline-block;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-bottom: 7px solid #ccc;
+            border-bottom-color: #ffffff;
+            position: absolute;
+            color: #ffffff;
+            top: 54px;
+            left: 17px;
+        }
+        .profile-circle {
+            width: 45px;
+            height: 44px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            -webkit-border-radius: 99em;
+            -moz-border-radius: 99em;
+            border-radius: 99em;
+            border: 2px solid #eee;
+            box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
+            vertical-align: middle;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- Preloader Starts -->
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+    <!-- Preloader End -->
+
+    <!-- Header Area Starts -->
+    <header class="header-area main-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="logo-area">
+                        <a href="index.html"><img src="assets/images/cisco_logo.gif" style="width:80%; height: 70px;" alt="logo"></a>
+                    </div>
+                </div>
+                <div class="col-lg-10">
+                    <div class="custom-navbar">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <div class="main-menu" style="float: right; margin-right: 150px ">
+                        <a href=""# class="account" >
+                            <i class="fa fa-user-circle" style="font-size: 2.8rem"></i>
+                            <p style="text-align: left; font-size: 15px">Jay Torasakar</p>
+                        </a>
+                        <div class="submenu" style="display: none; ">
+                            <ul class="root">
+                                <li >
+                                    <a href="#" >Dashboard</a>
+                                </li>
+                                <li >
+                                    <a href="#" >Profile</a>
+                                </li>
+                                <li >
+                                    <a href="#">Settings</a>
+                                </li>
+                                <li>
+                                    <a href="#">Sign Out</a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Area End -->
+
+    <!-- Banner Area Starts -->
+    <section class="banner-area">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 px-0">
+                    <div class="banner-bg"></div>
+                </div>
+                <div class="col-lg-6 align-self-center">
+                    <div class="banner-text">
+                        <h1>Book a <span>Meeting</span> within minutes</h1>
+                        <p class="py-3">Wherein herb beginning. Moved after gathering. Sea hi crate fowl man replenish place divided likeness herb one two lnetn Winged moving saw, may over.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Banner Area End -->
+
+    <!-- Search Area Starts -->
+    <div class="search-area">
+        <div class="search-bg">
+            <div class="container" >
+                <div class="row">
+                    <div class="col-lg-12">
+                        <form action="#" class="d-md-flex justify-content-between">
+
+
+                           <!-- <select name="meal" id="meal" onChange="changecat(this.value);">
+    <option value="" disabled selected>Select</option>
+    <option value="A">A</option>
+    <option value="B">B</option>
+    <option value="C">C</option>
+</select>
+
+
+<select name="category" id="category">
+    <option value="" disabled selected>Select</option>
+</select>
+-->
+
+                            <select name="select_country">
+                                <option value="al">All Countries</option>
+                                <option value="us">USA</option>
+                                <option value="eu">Europe</option>
+                                <option value="au">Australia</option>
+                                <option value="in">India</option>
+                            </select>
+
+                            <select>
+                                <option value="1">All States</option>
+                                <option value="2">California</option>
+                                <option value="3">New York</option>
+                            </select>
+
+                            <span class="glyphicon glyphicon-envelope"></span>
+                            <input type="search" placeholder="Search Room" id="tags">
+                            <button type="submit" class="template-btn">Check room</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Search Area End -->
+
+    <!-- Feature Area Starts -->
+    <section class="feature-area section-padding2">
+        <div class="container">
+            <div class="row">
+                <div class="row single-feature mb-4 mb-lg-0" id="room1" style="display: none">
+                    <div class="col-lg-4">
+                        <img src="assets/images/meeting_room_3.jpg" class="img-fluid rounded-circle" alt="Responsive image">
+                    </div>
+                    <div class="col-lg-8">
+                        <p class="py-3"><h4>SJC02-2-TEAM ROOM 18</h4>
+                            <b style="color: black">Seats:</b> 5 <br>
+                            <b style="color: black">Status:</b> Public <br>
+                            <b style="color: black">Reservation:</b>  <span style="color: green">Available</span><br><br>
+                            <a href="#" class="third-btn" data-toggle="modal" data-target="#modalbook1">Book now<span class="flaticon-next"></span></a><br><br>
+                            <span data-toggle="modal" data-target="#modalfavorite">
+                               <img src="assets/images/icon_3.png" style="height: auto; width: 8%" class="img-fluid" alt="Responsive image">
+                           </span>
+                           <span data-toggle="modal" data-target="#modalmap">
+                            <img src="assets/images/icon_2.png" style="height: auto; width: 8%" class="img-fluid" alt="Responsive image">
+                        </span>
+                    </div>
+                </div>
+
+                <div class="row single-feature mb-4 mb-lg-0" id="room2" style="display: none">
+                    <div class="col-lg-4">
+                        <img src="assets/images/meeting_room_3.jpg" class="img-fluid rounded-circle" alt="Responsive image">
+                    </div>
+                    <div class="col-lg-8">
+                        <p class="py-3"><h4>SJC02-2-TEAM ROOM 21</h4>
+                            <b style="color: black"> Seats:</b> 5 <br>
+                            <b style="color: black">Status:</b> Public <br>
+                            <b style="color: black">Reservation:</b>  <span style="color: red">Unavailable</span><br><br>
+                            <span data-toggle="modal" data-target="#modalfavorite">
+                               <img src="assets/images/icon_3.png" style="height: auto; width: 8%" class="img-fluid" alt="Responsive image">
+                           </span>
+                           <span data-toggle="modal" data-target="#modalmap">
+                            <img src="assets/images/icon_2.png" style="height: auto; width: 8%" class="img-fluid" alt="Responsive image">
+                        </span>
+                    </div>
+                </div>
+
+                <div class="row single-feature mb-4 mb-lg-0" id="room3" style="display: none">
+                    <div class="col-lg-4">
+                        <img src="assets/images/meeting_room_3.jpg" class="img-fluid rounded-circle" alt="Responsive image">
+                    </div>
+                    <div class="col-lg-8">
+                        <p class="py-3"><h4>SJC02-2-TEAM ROOM 24</h4>
+                            <b style="color: black"> Seats:</b> 5 <br>
+                            <b style="color: black">Status:</b>  Public <br>
+                            <b style="color: black">Reservation:</b>  <span style="color: orange">On Hold</span><br><br>
+                            <a href="#" class="forth-btn" data-toggle="modal" data-target="#modalbook2">On Hold<span class="flaticon-next"></span></a><br><br>
+                            <span data-toggle="modal" data-target="#modalfavorite">
+                               <img src="assets/images/icon_3.png" style="height: auto; width: 8%" class="img-fluid" alt="Responsive image">
+                           </span>
+                           <span data-toggle="modal" data-target="#modalmap">
+                            <img src="assets/images/icon_2.png" style="height: auto; width: 8%" class="img-fluid" alt="Responsive image">
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Feature Area End -->
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalbook1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">Confirm Reservation</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p><b style="color: black"> User:  </b>Jay Torasakar</p>
+                    <h5>Please select a time interval:
+                        <span>
+                            <select id="interval">
+                                <option value="5" selected>5 mins</option>
+                                <option value="10">10 mins</option>
+                                <option value="15">15 mins</option>
+                            </select>
+                        </span>
+                    </h5>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="book-room-now" onclick='book($("#interval").find(":selected").val())'>Book Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalbook2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">On Hold Reservation</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p><b style="color: black"> User:  </b>Jay Torasakar</p>
+                    <h5>Do you want to add yourself to the Queue?
+                    </h5>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="queue()">Add me to the Queue </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalfavorite" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">Favorites</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Do you wish to add this room to your Favorites list? </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Add Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="modalmap" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">Floor Plan</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="img-hover-zoom">
+                        <img src="assets/images/sjc2-2.png" style="height: 100%; width: 200%" class="img-fluid " alt="Responsive image">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer Area Starts -->
+    <footer class="footer-area section-padding">
+    </footer>
+
+
+    <!-- Javascript -->
+    <script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="assets/js/vendor/bootstrap-4.1.3.min.js"></script>
+    <script src="assets/js/vendor/wow.min.js"></script>
+    <script src="assets/js/vendor/owl-carousel.min.js"></script>
+    <script src="assets/js/vendor/jquery.nice-select.min.js"></script>
+    <script src="assets/js/vendor/ion.rangeSlider.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="assets/js/temp.js"></script>
+
+    <script>
+        //This function is to help us do an autocomplete of the room names
+        // Read the Team room from the data.txt file
+        $( function () {
+
+            var availableTags = [
+            {label: "SJC02-2-TEAM ROOM 18", id: "room1"},
+            {label: "SJC02-2-TEAM ROOM 21", id: "room2"},
+            {label: "SJC02-2-TEAM ROOM 24", id: "room3"},
+            {label: "SJC02-2-TEAM ROOM 35", id: "room4"},
+            {label: "SJC02-2-TEAM ROOM 57", id: "room5"}]
+
+            $( "#tags" ).autocomplete({
+                source: availableTags,
+                select: function(event, ui)
+                {
+                    if (ui.item.id == "room1")
+                    {
+                        $("#room1").show();
+                        $("#room2").hide();
+                        $("#room3").hide();
+                    }
+                    if (ui.item.id == "room2")
+                    {
+                        $("#room1").hide();
+                        $("#room2").show();
+                        $("#room3").hide();
+                    }
+                    if (ui.item.id == "room3")
+                    {
+                        $("#room1").hide();
+                        $("#room2").hide();
+                        $("#room3").show();
+                    }
+                    window.roomName = ui.item.label;
+                    console.log(window.roomName);
+                }
+            });
+        } );
+
+        $("#book-room-now").click(function(){
+            console.log($("#interval").find(":selected").val());
+        })
+
+    </script>
+    <script type="text/javascript">
+        //This function is for the Username dropdown options
+        $(document).ready(function()
+        {
+            $(".account").hover(function()
+            {
+                var X=$(this).attr('id');
+
+                $(".submenu").show();
+                $(this).attr('id', '1');
+            });
+
+            $(document).mouseup(function()
+            {
+                $(".submenu").hide();
+                $(".account").attr('id', '');
+            });
+        });
+    </script>
+
+
+
+</body>
+</html>
